@@ -51,16 +51,6 @@ BiteBot is a Streamlit-based application designed to help you cook delicious mea
 
 ---
 
-## 🖼️ Screenshots  
-
-### Main Interface  
-<img src="https://via.placeholder.com/800x400?text=Screenshot+1" alt="Main Interface Screenshot" />
-
-### Recipe Output  
-<img src="https://via.placeholder.com/800x400?text=Screenshot+2" alt="Recipe Output Screenshot" />
-
----
-
 ## 🚀 Usage  
 
 1. Enter your **ingredients**, **equipment**, and any **dietary restrictions**.  
