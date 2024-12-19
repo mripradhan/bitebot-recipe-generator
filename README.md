@@ -87,6 +87,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 Enjoy BiteBot, and happy cooking! 🥗
-```
-
-This version uses proper Markdown formatting with clear sections, code blocks, and placeholders for screenshots. Let me know if you'd like to refine anything further!
