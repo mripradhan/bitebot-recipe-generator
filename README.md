@@ -17,7 +17,6 @@ BiteBot is a Streamlit-based application designed to help you cook delicious mea
 - **Groq API** (using LLaMA 3 70B) for AI recipe generation
 - **API Ninjas** for nutrition data
 - **Dotenv** for environment variable management
-- **Pyperclip** for copy-to-clipboard functionality
 
 ## 🚀 Getting Started
 
