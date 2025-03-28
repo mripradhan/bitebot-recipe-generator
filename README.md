@@ -3,85 +3,79 @@
 
 BiteBot is a Streamlit-based application designed to help you cook delicious meals with the ingredients, equipment, and dietary restrictions you have. Powered by Groq's API, BiteBot creates step-by-step recipes customized to your needs in just a few clicks!  
 
----
+## ✨ Features
 
-## 🌟 Features  
+- 🥗 **Generate two unique recipe variations** from your ingredients
+- ⏱️ **Customize by cooking time** (quick, moderate, or leisurely meals)
+- 🌎 **Select cuisine style** (Italian, Mexican, Japanese, etc.)
+- 🥦 **Nutritional analysis** of main ingredients (via API Ninjas)
+- 🎨 **Charming pastel UI** with responsive design
 
-- **Personalized Recipes**: Input your ingredients, equipment, and dietary restrictions to generate custom recipes.  
-- **Groq API Integration**: Uses advanced AI models for creating detailed, professional recipes.  
-- **User-Friendly Interface**: A pastel-themed, intuitive Streamlit app.  
-- **Dietary Considerations**: Supports restrictions like vegetarian, vegan, gluten-free, and more.  
-- **Quick and Fun**: Get your recipe in seconds with clear instructions and cooking times.  
+## 🛠️ Technologies Used
 
----
+- **Python** with **Streamlit** for the web interface
+- **Groq API** (using LLaMA 3 70B) for AI recipe generation
+- **API Ninjas** for nutrition data
+- **Dotenv** for environment variable management
+- **Pyperclip** for copy-to-clipboard functionality
 
-## 🛠️ Installation  
+## 🚀 Getting Started
 
-1. **Clone the Repository**  
+### Prerequisites
+
+- Python 3.8+
+- Groq API key (free tier available)
+- API Ninjas key (optional, for nutrition data)
+
+### Installation
+
+1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bitebot.git
+   git clone https://github.com/yourusername/bitebot.git
    cd bitebot
-
-
-2. **Set Up a Virtual Environment**  
-   ```bash
-   python -m venv env
-   source env/bin/activate   # On Windows: env\Scripts\activate
    ```
 
-3. **Install Dependencies**  
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set Up Groq API Key**  
-   - Create a `.env` file in the project directory.  
-   - Add your Groq API key:  
-     ```env
-     GROQ_API_KEY=your-api-key-here
-     ```
-
-5. **Run the Application**  
-   ```bash
-   streamlit run bitebot.py
+4. Create a `.env` file and add your API keys:
+   ```env
+   GROQ_API_KEY=your_groq_api_key_here
+   NINJAS_API_KEY=your_ninjas_api_key_here  # Optional
    ```
 
-6. **Access the App**  
-   Open the link displayed in your terminal (default: `http://localhost:8501`).
+### Running the App
 
----
+```bash
+streamlit run app.py
+```
 
-## 🚀 Usage  
+The app will launch in your default browser at `http://localhost:8501`.
 
-1. Enter your **ingredients**, **equipment**, and any **dietary restrictions**.  
-2. Click the **Generate Recipe** button.  
-3. Enjoy a detailed recipe tailored to your inputs!  
+## 🌟 Tips for Best Results
 
----
+1. **List as many ingredients as possible** - More ingredients = more creative recipes!
+2. **Be specific with equipment** - Mention if you have special tools like air fryers or blenders
+3. **Try different cuisines** - Discover new flavor combinations
+4. **Use the nutrition analysis** - Great for meal planning and dietary tracking
 
-## 🤝 Contributing  
+## 🤝 Contributing
 
-Contributions are welcome! To get started:  
+Contributions are welcome! Please open an issue or submit a pull request for any improvements.
 
-1. Fork the repository.  
-2. Create a new branch:  
-   ```bash
-   git checkout -b feature-name
-   ```  
-3. Make your changes and commit:  
-   ```bash
-   git commit -m "Add your message here"
-   ```  
-4. Push to the branch:  
-   ```bash
-   git push origin feature-name
-   ```  
-5. Submit a pull request.  
-
----
-
-## 📜 License  
-
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a pull request
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
