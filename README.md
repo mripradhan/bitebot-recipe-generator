@@ -5,9 +5,9 @@ BiteBot is a Streamlit-based application designed to help you cook delicious mea
 
 ## ✨ Features
 
-- 🥗 **Generate two unique recipe variations** from your ingredients
+- 🥗 **Generate unique recipe variations** from your ingredients
 - ⏱️ **Customize by cooking time** (quick, moderate, or leisurely meals)
-- 🌎 **Select cuisine style** (Italian, Mexican, Japanese, etc.)
+- 🌎 **Select cuisine style** (Italian, Mexican, Chinese, etc.)
 - 🥦 **Nutritional analysis** of main ingredients (via API Ninjas)
 - 🎨 **Charming pastel UI** with responsive design
 
