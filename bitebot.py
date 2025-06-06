@@ -54,7 +54,7 @@ class RecipeGenerator:
         if api_key:
             self.client = Groq(api_key=api_key)
         else:
-            env_key = "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"
+            env_key = "YOUR_KEY_HERE"
             self.client = Groq(api_key=env_key)
 
     def generate_recipe(self, ingredients, equipment, dietary_restrictions, cuisine=None, time_limit=None):
@@ -127,7 +127,7 @@ class NutritionAnalyzer:
         return nutrition_data
 
 def detect_ingredients_with_roboflow(image_file):
-    roboflow_api_key = "VBrbofv1SzJmOhfTp1ZS"
+    roboflow_api_key = "YOUR_KEY_HERE"
 
     try:
         client = InferenceHTTPClient(
@@ -156,7 +156,7 @@ def main():
     st.markdown("<h1 class='main-title'>🥗 Welcome to BiteBot! Your personalized recipe generator.</h1>", unsafe_allow_html=True)
     st.write("✨ Enter your ingredients, equipment, and preferences, and BiteBot will cook up the perfect recipe!")
 
-    nutrition_api_key = "a6viV8ixM0pzeCrx47jWrw==pBdll5JaBghNMV0r"
+    nutrition_api_key = "YOUR_KEY_HERE"
     nutrition_analyzer = NutritionAnalyzer(api_key=nutrition_api_key)
     recipe_generator = RecipeGenerator(api_key=None)
 
