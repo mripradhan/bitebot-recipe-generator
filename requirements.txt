@@ -1,5 +1,6 @@
-streamlit
+flask
 groq
 python-dotenv
 requests
-pyperclip
+Pillow
+# Optional: inference-sdk (for Roboflow ingredient detection, requires Python <3.14)

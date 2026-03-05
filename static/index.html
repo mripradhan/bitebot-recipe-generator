@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BiteBot — Your Personalized Recipe Generator</title>
+  <meta name="description"
+    content="BiteBot generates personalized recipes from your available ingredients, equipment, and dietary preferences using AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <!-- ── Ambient blobs ── -->
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+  <div class="ambient-blob blob-3"></div>
+
+  <!-- ── Nav ── -->
+  <nav class="topnav" id="topnav">
+    <div class="nav-brand">
+      <span class="brand-icon">⌂</span>
+      <span class="brand-text">bite<span class="brand-accent">bot</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#input-section" class="nav-link">⌘ Create</a>
+      <a href="#recipe-output" class="nav-link">⌕ Recipe</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">BITEBOT RECIPE ENGINE</div>
+      <h1 class="hero-title">
+        Your ingredients.<br />
+        <span class="hero-highlight">Good food.</span>
+      </h1>
+      <p class="hero-sub">
+        Your personalized recipe generator, built for your mood, and, well, your current fridge situation.
+      </p>
+      <a href="#input-section" class="hero-cta" id="hero-cta">
+        <span>⌘</span> Start cooking
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-ring ring-1"></div>
+      <div class="hero-ring ring-2"></div>
+      <div class="hero-ring ring-3"></div>
+      <div class="hero-center-icon">🍳</div>
+    </div>
+  </header>
+
+  <!-- ── Main input section ── -->
+  <main id="input-section" class="input-section">
+    <div class="section-header">
+      <span class="section-tag">⌗ INPUT</span>
+      <h2>Tell us what you're working with</h2>
+    </div>
+
+    <div class="input-grid">
+
+      <!-- Left column: Image upload + Ingredients -->
+      <div class="input-col-left">
+
+        <!-- Image upload card -->
+        <div class="card card-upload" id="upload-card">
+          <div class="card-header">
+            <span class="card-icon">⌁</span>
+            <h3>Snap & Detect</h3>
+          </div>
+          <div class="dropzone" id="dropzone">
+            <input type="file" id="image-input" accept="image/jpeg,image/png,image/webp" hidden />
+            <div class="dropzone-content" id="dropzone-content">
+              <div class="dropzone-icon">📸</div>
+              <p class="dropzone-text">Drop an image here or <span class="dropzone-link">browse</span></p>
+              <p class="dropzone-hint">JPG, PNG, WEBP — we'll detect ingredients automatically</p>
+            </div>
+            <img id="preview-image" class="preview-image hidden" alt="Uploaded preview" />
+          </div>
+          <div id="detected-badge" class="detected-badge hidden">
+            <span class="badge-label">⌕ Detected</span>
+            <span id="detected-list" class="badge-list"></span>
+          </div>
+        </div>
+
+        <!-- Ingredients card -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">🥬</span>
+            <h3>Ingredients</h3>
+          </div>
+          <div class="input-wrap">
+            <textarea id="ingredients" rows="3" placeholder="e.g. chicken breast, garlic, olive oil, lemon"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column: Equipment, Diet, Cuisine, Time -->
+      <div class="input-col-right">
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">⌥</span>
+            <h3>Equipment</h3>
+          </div>
+          <div class="input-wrap">
+            <textarea id="equipment" rows="2" placeholder="e.g. oven, blender, stovetop, air fryer"></textarea>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">⌫</span>
+            <h3>Dietary Restrictions</h3>
+          </div>
+          <div class="input-wrap">
+            <input type="text" id="dietary" placeholder="e.g. vegan, gluten-free, nut-free" />
+          </div>
+        </div>
+
+        <div class="mini-card-row">
+          <div class="card card-mini">
+            <div class="card-header">
+              <span class="card-icon">⌖</span>
+              <h3>Cuisine</h3>
+            </div>
+            <div class="input-wrap">
+              <select id="cuisine">
+                <option value="Any">Any style</option>
+                <option value="Italian">Italian</option>
+                <option value="Indian">Indian</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Japanese">Japanese</option>
+                <option value="French">French</option>
+                <option value="Mediterranean">Mediterranean</option>
+                <option value="Thai">Thai</option>
+                <option value="American">American</option>
+                <option value="Korean">Korean</option>
+                <option value="Middle Eastern">Middle Eastern</option>
+              </select>
+            </div>
+          </div>
+          <div class="card card-mini">
+            <div class="card-header">
+              <span class="card-icon">⏱</span>
+              <h3>Time</h3>
+            </div>
+            <div class="input-wrap">
+              <select id="time-limit">
+                <option value="Any">No limit</option>
+                <option value="15 minutes">15 min</option>
+                <option value="30 minutes">30 min</option>
+                <option value="45 minutes">45 min</option>
+                <option value="1 hour">1 hour</option>
+                <option value="Over 1 hour">1 hour+</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Generate button -->
+    <div class="generate-wrap">
+      <button id="generate-btn" class="generate-btn" type="button">
+        <span class="btn-text">⌘ Generate Recipe</span>
+        <span class="btn-loader hidden" id="btn-loader">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ── Recipe output ── -->
+  <section id="recipe-output" class="recipe-section hidden">
+    <div class="section-header">
+      <span class="section-tag">⌕ RESULT</span>
+      <h2>Your personalized recipe</h2>
+    </div>
+    <div class="recipe-card" id="recipe-card">
+      <div id="recipe-content" class="recipe-content"></div>
+    </div>
+  </section>
+
+  <!-- ── Nutrition output ── -->
+  <section id="nutrition-output" class="nutrition-section hidden">
+    <div class="section-header">
+      <span class="section-tag">⌗ NUTRITION</span>
+      <h2>Estimated nutritional breakdown</h2>
+    </div>
+    <div class="nutrition-grid" id="nutrition-grid"></div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <p>built with 🍊 by <strong>bitebot</strong></p>
+  </footer>
+
+  <!-- ── Error toast ── -->
+  <div id="toast" class="toast hidden">
+    <span id="toast-msg"></span>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
