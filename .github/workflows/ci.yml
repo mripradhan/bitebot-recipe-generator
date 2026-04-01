@@ -1,0 +1,36 @@
+name: Continuous Integration
+
+'on':
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint-and-test-setup:
+    name: Lint and Test Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Basic Python syntax check
+        run: |
+          python -m py_compile app.py
+          python -m py_compile bitebot.py
+
+      - name: Verify JavaScript files
+        run: |
+          if [ -f "static/script.js" ]; then
+            echo "Checking JavaScript syntax..."
+            node -c static/script.js || exit 1
+          fi
