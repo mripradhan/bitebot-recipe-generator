@@ -1,0 +1,26 @@
+name: Dependency Security Check
+
+'on':
+  schedule:
+    - cron: "0 0 * * 1"  # Runs every Monday at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check-dependencies:
+    name: Check Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install safety
+        run: pip install safety
+
+      - name: Check for vulnerable dependencies
+        run: safety check -r requirements.txt --full-report
